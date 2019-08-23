@@ -29,7 +29,17 @@
   Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
-//Code Here
+class Employee {
+  constructor(first_name,last_name, email,age) {
+    this.first_name = first_name
+    this.last_name = last_name
+    this.email = email
+    this.age = age
+  }
+  makeWidget(){
+    return (this.first_name  + ' ' + this.last_name + ' Widget')
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -47,14 +57,26 @@
   Call your new class Manager
 */
 
-//Code Here
+class Manager extends Employee {
+  constructor(first_name, last_name, email, age, reports) {
+    super (first_name, last_name, email, age)
+    this.reports = [] 
+  }
+hire(employee) {
+  return this.reports.push(employee)
+}
+fire(index) {
+  return this.reports.splice(index,1)
+}
+}
 
 
 ////////// PROBLEM 3 //////////
 
 /*
   Managers for Widget Co. get promoted when they get more employees, and get a bonus when they fire employees.
-  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a manager with the following additional properties:
+  create a class ProgressiveManager that extends Manager.  
+  A Progressive Manager has all of the same properties as a manager with the following additional properties:
     - title - default 'Not a manager'
     - bonus - default 0
 
@@ -71,7 +93,20 @@
   Call your new class ProgressiveManager
 */
 
-//Code Here
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age, reports,title, bonus) {
+    super (first_name, last_name, email, age, reports)
+    this.title = title
+    this.bonus = bonus 
+}
+hire(employee) {
+  if( i = 0; i < this.reports.length; i++){
+  }
+  return this.reports.push(employee) 
+}
+fire(index) {
+  return this.reports.splice(index,1)
+}
 
 
 
@@ -99,5 +134,3 @@
 */
 
 //Code Here
-
-
